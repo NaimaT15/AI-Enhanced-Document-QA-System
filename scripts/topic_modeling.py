@@ -10,7 +10,7 @@ def topic_modeling(text):
     return lda.components_
 
 def update_pinecone_metadata(document_id, topics):
-    pinecone.init(api_key='YOUR_API_KEY')
+    pinecone.init(api_key='PINECONE_API_KEY')
     index = pinecone.Index('document-index')
     index.update(id=document_id, set_metadata={'topics': topics})
 

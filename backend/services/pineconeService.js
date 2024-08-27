@@ -3,10 +3,10 @@ const { Pinecone: PineconeClient } = require('@pinecone-database/pinecone');
 
 // Initialize Pinecone client with API key and environment
 const pinecone = new PineconeClient({ 
-  apiKey: 'INECONE_API_KEY'// Replace with your actual Pinecone API key
+  apiKey: 'PINECONE_API_KEY'
 });
 
-const openaiApiKey = 'OPENAI_API_KEY'; // Replace with your actual OpenAI API key
+const openaiApiKey = 'OPENAI_API_KEY'; 
 
 async function generateEmbeddings(chunks) {
   try {
@@ -66,7 +66,6 @@ async function storeInPinecone(embeddings) {
       values: embedding,
       metadata: { source: 'document-chunk', chunkIndex: i }
     }));
-    console.log(vectors, 'lllllllllllllll')
     // Ensure vectors is an array
     if (!Array.isArray(vectors)) {
       throw new Error('Vectors must be an array');

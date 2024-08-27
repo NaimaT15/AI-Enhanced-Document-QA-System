@@ -1,7 +1,7 @@
 const { retrieveFromPinecone } = require('./pineconeService');
 const axios = require('axios');
 
-const openaiApiKey = 'YOUR_OPENAI_API_KEY'; // Replace with your actual OpenAI API key
+const openaiApiKey = 'OPENAI_API_KEY'; // Replace with your actual OpenAI API key
 const aiModel = 'AI_MODEL'; // or 'claude-v1.3'
 
 async function getAIResponse(prompt) {
